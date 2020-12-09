@@ -10,3 +10,9 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 36px;
 }
+.Pokedex-winner{
+  color: rgb(70, 230, 70);
+}
+.Pokedex-loser{
+  color: rgb(230, 70, 70);
+}
