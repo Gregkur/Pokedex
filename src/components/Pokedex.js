@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import '../stylesheets/Pokecard.css'
+import '../stylesheets/Pokedex.css'
 import Pokecard from "./Pokecard";
 
 class Pokedex extends Component {
@@ -19,9 +19,11 @@ class Pokedex extends Component {
         return (
             <div className = "Pokedex">
                 <h1>Pokedex!</h1>
-                {this.props.pokemon.map ((p) => (
-                    <Pokecard id={p.id} name={p.name} type={p.type} exp={p.base_experience} />
-                 ))}
+                <div className = "Pokedex-container">
+                    {this.props.pokemon.map ((p) => (
+                        <Pokecard id={p.id} name={p.name} type={p.type} exp={p.base_experience} />
+                    ))}
+                </div>
 
             </div>
         )
