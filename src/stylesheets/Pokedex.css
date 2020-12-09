@@ -3,6 +3,7 @@
     flex-direction: column;
     display: flex;
     justify-items: center;
+    margin: 20px;
 }
 .Pokedex-container {
     display: grid;

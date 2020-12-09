@@ -16,18 +16,24 @@ class Pokegame extends Component {
           ]
         }
     render() {
-       let firstHand = []
-       let secondHand = [ ...this.props.pokemon ]
+      let firstHand = []
+      let secondHand = [ ...this.props.pokemon ]
 
-          while (firstHand.length < secondHand.length) {
-            let index = Math.floor(Math.random() * secondHand.length );
-            let randomPokemon = secondHand.splice(index, 1)[0];
-            firstHand.push(randomPokemon);
-          }
-          
+        while (firstHand.length < secondHand.length) {
+          let index = Math.floor(Math.random() * secondHand.length );
+          let randomPokemon = secondHand.splice(index, 1)[0];
+          firstHand.push(randomPokemon);
+        }
+
+      let exp1 = firstHand.reduce((exp, pokemon) => exp + pokemon.base_experience, 0 );
+      let exp2 = secondHand.reduce((exp, pokemon) => exp + pokemon.base_experience, 0 );
+
+
         return (
           <div>
             <h1>Pokegame!</h1>
+            <Pokedex pokemon = { firstHand } hand = "First" exp = {exp1} isWinner = { exp1 > exp2}/>
+            <Pokedex pokemon = { secondHand } hand = "Second" exp = {exp2} isWinner = { exp2 > exp1}/>
           </div>
         )
     }
